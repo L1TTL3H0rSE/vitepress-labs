@@ -1,3 +1,12 @@
+---
+title: Лабораторная работа №2
+description: Реализация базовых структур данных.
+head:
+  - - meta
+    - name: keywords
+      content: typescript, python, vue, структуры
+---
+
 <script setup>
 import ClassRunner from '../../components/ClassRunner.vue'
 
@@ -36,6 +45,10 @@ const dll = new DoublyLinkedList()
 <<< @/labs/mathlogic/lab2/lab2_1.ts
 :::
 
+::: details Посмотреть исходный код (Python)
+<<< @/labs/mathlogic/lab2/lab2_1.py
+:::
+
 ## 2. Очередь (Queue)
 
 Очередь — это структура данных, работающая по принципу FIFO (First In, First Out — «первым пришел, первым ушел»).
@@ -54,6 +67,10 @@ const dll = new DoublyLinkedList()
 
 ::: details Посмотреть исходный код (TypeScript)
 <<< @/labs/mathlogic/lab2/lab2_2.ts
+:::
+
+::: details Посмотреть исходный код (Python)
+<<< @/labs/mathlogic/lab2/lab2_2.py
 :::
 
 ## 3. Односвязный список (Singly Linked List)
@@ -77,6 +94,10 @@ const dll = new DoublyLinkedList()
 <<< @/labs/mathlogic/lab2/lab2_3.ts
 :::
 
+::: details Посмотреть исходный код (Python)
+<<< @/labs/mathlogic/lab2/lab2_3.py
+:::
+
 ## 4. Двусвязный список (Doubly Linked List)
 
 Структура данных, где каждый узел содержит ссылки как на следующий, так и на предыдущий элемент, что позволяет перемещаться в обоих направлениях.
@@ -97,3 +118,11 @@ const dll = new DoublyLinkedList()
 ::: details Посмотреть исходный код (TypeScript)
 <<< @/labs/mathlogic/lab2/lab2_4.ts
 :::
+
+::: details Посмотреть исходный код (Python)
+<<< @/labs/mathlogic/lab2/lab2_4.py
+:::
+
+## 5. Описание решения
+
+Поскольку в браузере достаточно сложно использовать код на питоне, мне пришлось перевести его на Typescript, чтобы иметь возможность наглядно демонстрировать работу каждой структуры данных. Также пришлось помучаться, чтобы правильно написать компонент ClassRunner, который может динамически принимать любой класс и при помощи рефлексии и прототипов сам отображать нужно количество инпутов, методов, данные и так далее. Но например display пришлось захардкодить, хотя это тоже можно сделать динамически через проп.

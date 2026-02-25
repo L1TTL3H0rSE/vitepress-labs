@@ -104,8 +104,8 @@ export class DoublyLinkedList<T> {
         node.next.prev = node.prev;
         return;
       }
+      node = node!.next;
     }
-    node = node!.next;
   }
 
   display_forward() {

@@ -121,12 +121,10 @@ watchEffect(() => {
     <div class="header">
       <h3>{{ title }}</h3>
     </div>
-
     <div class="state-panel">
       <div class="panel-title">Текущее состояние:</div>
       <pre class="state-code"><code>{{ serializedState }}</code></pre>
     </div>
-
     <div
       v-if="lastResult !== null"
       class="alert success"
@@ -141,17 +139,14 @@ watchEffect(() => {
       <strong>Ошибка:</strong>
       {{ lastError }}
     </div>
-
     <div class="methods-panel">
       <div class="panel-title">Доступные методы:</div>
-
       <div
         v-for="method in methodsList"
         :key="method.name"
         class="method-row"
       >
         <span class="method-name">{{ method.name }}</span>
-
         <div class="method-controls">
           <input
             v-for="arg in method.args"
@@ -169,6 +164,19 @@ watchEffect(() => {
             Вызвать
           </button>
         </div>
+      </div>
+    </div>
+    <div
+      v-if="instance.display || instance.display_forward"
+      class="visual-panel"
+    >
+      <div class="panel-title">Строковое представление:</div>
+      <div class="visual-output">
+        {{ instance.display ? instance.display() : "" }}
+        {{ instance.display_forward ? instance.display_forward() : "" }}
+      </div>
+      <div class="visual-output">
+        {{ instance.display_backward ? instance.display_backward() : "" }}
       </div>
     </div>
   </div>
@@ -290,5 +298,14 @@ watchEffect(() => {
   background-color: rgba(244, 63, 94, 0.1);
   color: var(--vp-c-red-1);
   border: 1px solid rgba(244, 63, 94, 0.2);
+}
+
+.visual-output {
+  font-family: var(--vp-font-family-mono);
+  color: var(--vp-c-brand-1);
+  font-weight: bold;
+  padding: 10px;
+  background: var(--vp-c-bg-mute);
+  border-radius: 4px;
 }
 </style>

@@ -1,6 +1,5 @@
 import { StructureNode } from "./lab2_1";
 
-//tail намеренно не использую
 export class SinglyLinkedList<T> {
   head: StructureNode<T> | null = null;
   private _size: number = 0;
