@@ -58,7 +58,7 @@ function mapper(input: string) {
     const arr = input
       .split(',')
       .map(s => s.trim())
-      .filter(s => s !== '')
+      .filter(s => s != '')
       .map(Number)
 
     if (arr.some(isNaN)) {
