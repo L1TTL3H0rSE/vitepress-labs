@@ -2,8 +2,8 @@
 import { ref } from "vue";
 
 export type InteractiveRunnerProps<T> = {
-  solution: (array: T[]) => any;
-  mapper: (input: string) => T[];
+  solution: (input: T) => any;
+  mapper: (input: string) => T;
 };
 
 const props = defineProps<InteractiveRunnerProps<T>>();
@@ -16,24 +16,13 @@ function run() {
   errorStr.value = "";
   outputStr.value = "";
 
-  let arr: T[];
+  let arr: T;
   try {
     arr = props.mapper(inputStr.value);
-    try {
-      outputStr.value = String(props.solution(arr));
-    } catch (err: any) {
-      if (err.message) {
-        errorStr.value = err.message;
-      } else {
-        errorStr.value = err;
-      }
-    }
+    outputStr.value = String(props.solution(arr));
   } catch (err: any) {
-    if (err.message) {
-      errorStr.value = err.message;
-    } else {
-      errorStr.value = err;
-    }
+    console.error(err);
+    errorStr.value = err.message || String(err);
   }
 }
 </script>

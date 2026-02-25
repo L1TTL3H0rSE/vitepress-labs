@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/vitepress-docs/',
+  base: '/vitepress-labs/',
   title: "Тельпуховский Н.А.",
   description: "Лабораторные работы",
   themeConfig: {
