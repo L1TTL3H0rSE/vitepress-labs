@@ -41,9 +41,23 @@
 
 Ниже вы можете ввести свой массив чисел через запятую и протестировать работу моего алгоритма прямо в браузере (под капотом работает перекомпилированная TS-версия кода).
 
-<script setup>
+<script setup lang="ts">
 import InteractiveRunner from './components/InteractiveRunner.vue'
-import sortByBits from './labs/lab1/lab1.ts'
+import { sortByBits } from './labs/lab1/lab1.ts'
+
+function mapper(input: string) {
+    const arr = input
+      .split(',')
+      .map(s => s.trim())
+      .filter(s => s !== '')
+      .map(Number)
+
+    if (arr.some(isNaN)) {
+      throw new Error("Ошибка: Введите только числа, разделенные запятыми.")
+    }
+
+    return arr;
+}
 </script>
 
-<InteractiveRunner :solution="sortByBits" />
+<InteractiveRunner :solution="sortByBits" :mapper />

@@ -16,9 +16,18 @@ function run() {
   errorStr.value = "";
   outputStr.value = "";
 
+  let arr: T[];
   try {
-    const arr = props.mapper(inputStr.value);
-    outputStr.value = String(props.solution(arr));
+    arr = props.mapper(inputStr.value);
+    try {
+      outputStr.value = String(props.solution(arr));
+    } catch (err: any) {
+      if (err.message) {
+        errorStr.value = err.message;
+      } else {
+        errorStr.value = err;
+      }
+    }
   } catch (err: any) {
     if (err.message) {
       errorStr.value = err.message;
