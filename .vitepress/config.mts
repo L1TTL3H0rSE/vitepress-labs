@@ -84,4 +84,9 @@ export default defineConfig({
       copyright: "Copyright © 2026 - l1ttl3h0rse",
     },
   },
+  vite: {
+    build: {
+      minify: false,
+    },
+  },
 });
