@@ -29,13 +29,13 @@ head:
 Оба решения успешно прошли все тесты (вердикт **Accepted**).
 
 ::: details Посмотреть исходный код на TypeScript
-<<< @/labs/lab1/lab1.ts
+<<< @/labs/mathlogic/lab1/lab1.ts
 :::
 
 ![Успешно](/img/lab1/typescript.png)
 
 ::: details Посмотреть исходный код на Python
-<<< @/labs/lab1/lab1.py
+<<< @/labs/mathlogic/lab1/lab1.py
 :::
 
 ![Успешно](/img/lab1/python.png)
@@ -51,8 +51,8 @@ head:
 Ниже вы можете ввести свой массив чисел через запятую и протестировать работу моего алгоритма прямо в браузере (под капотом работает перекомпилированная TS-версия кода).
 
 <script setup lang="ts">
-import InteractiveRunner from './components/InteractiveRunner.vue'
-import { sortByBits } from './labs/lab1/lab1.ts'
+import InteractiveRunner from '../../components/InteractiveRunner.vue'
+import { sortByBits } from './lab1/lab1.ts'
 
 function mapper(input: string) {
     const arr = input

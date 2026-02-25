@@ -57,12 +57,16 @@ export default defineConfig({
     nav: [{ text: "Главная", link: "/" }],
     sidebar: [
       {
-        text: "Лабораторные работы",
+        text: "Математическая логика и теория алгоритмов",
         items: [
-          { text: "Лабораторная работа №1", link: "/lab1" },
-          { text: "Лабораторная работа №2", link: "/lab2" },
-          { text: "Лабораторная работа №3", link: "/lab3" },
+          { text: "Лабораторная работа №1", link: "/labs/mathlogic/lab1" },
+          { text: "Лабораторная работа №2", link: "/labs/mathlogic/lab2" },
+          { text: "Лабораторная работа №3", link: "/labs/mathlogic/lab3" },
         ],
+      },
+      {
+        text: "Дискретная математика",
+        items: [],
       },
     ],
 
