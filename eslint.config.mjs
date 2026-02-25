@@ -21,7 +21,7 @@ export default [
     ...EslintPluginVue.configs["flat/essential"],
     EslintConfigPrettier,
     {
-        files: ["**/*.js", "**/*.ts", "**/*.vue"],
+        files: ["**/*.js", "**/*.ts", "**/*.mts", "**/*.vue"],
         languageOptions: {
             globals: {
                 ...globals.browser,
@@ -32,7 +32,7 @@ export default [
                 parser: EslintParserTypescript,
                 sourceType: "module",
                 ecmaVersion: 2022,
-                extraFileExtensions: [".vue"],
+                extraFileExtensions: [".vue", ".md"], 
             },
         },
         plugins: {
@@ -145,4 +145,28 @@ export default [
             ],
         },
     },
+    //  {
+    //     files: ["**/*.md"],
+    //     languageOptions: {
+    //         globals: {
+    //             ...globals.browser,
+    //             ...globals.node,
+    //         },
+    //         parser: VueEslintParser,
+    //         parserOptions: {
+    //             parser: EslintParserTypescript,
+    //             extraFileExtensions: [".md"],
+    //             sourceType: "module",
+    //         },
+    //     },
+    //     plugins: {
+    //         vue: EslintPluginVue,
+    //         "@typescript-eslint": EslintPluginTypescript,
+    //     },
+    //     rules: {
+    //         "vue/valid-template-root": "off",
+    //         "no-unused-vars": "off", 
+    //         "@typescript-eslint/no-unused-vars": "off" 
+    //     }
+    // }
 ];

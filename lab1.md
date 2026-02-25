@@ -1,3 +1,12 @@
+---
+title: Лабораторная работа №1
+description: Решение задачи 1356 (Sort Integers by The Number of 1 Bits) на LeetCode.
+head:
+  - - meta
+    - name: keywords
+      content: leetcode, typescript, python, сортировка, биты, vue
+---
+
 # Лабораторная работа №1: Знакомство с LeetCode
 
 ## 1. Информация о задаче
@@ -60,4 +69,7 @@ function mapper(input: string) {
 }
 </script>
 
-<InteractiveRunner :solution="sortByBits" :mapper />
+<InteractiveRunner
+  :solution="sortByBits"
+  :mapper
+/>

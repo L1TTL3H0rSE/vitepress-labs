@@ -12,19 +12,22 @@ hero:
     - theme: alt
       text: Профиль на edu.rguk
       link: https://edu.rguk.ru/user/profile.php?id=22048
+    # - theme: alt
+    # text: Профиль на LeetCode
+    # link: https://leetcode.com/u/l1ttl3h0rse/
     - theme: alt
-      text: Профиль на LeetCode
-      link: https://leetcode.com/u/l1ttl3h0rse/
+      text: Telegram
+      link: https://t.me/lolyakis
 
 features:
   - title: Лабораторная работа №1
     details: Решение задачи уровня LeetCode easy
     link: /lab1
-  - title: Документация для Api враппера
-    details: Пример документации для самописного враппера для Directus CMS
-    link: /api-wrapper
-  - title: Документация для компонента и composable
-    details: Пример документации для самописного компонента Slider.vue и composable useDraggable
-    link: /ui-kit
+  - title: Лабораторная работа №2
+    details: Реализация базовых структур данных
+    link: /lab2
+  - title: Лабораторная работа №3
+    details: Реализация продвинутых структур данных
+    link: /lab3
 ---
 
