@@ -6,14 +6,18 @@ hero:
   text: "математика"
   tagline: Лабораторные работы
 
-# features:
-#   - title: Лабораторная работа №1
-#     details: Решение задачи уровня LeetCode easy
-#     link: /labs/mathlogic/lab1
-#   - title: Лабораторная работа №2
-#     details: Реализация базовых структур данных
-#     link: /labs/mathlogic/lab2
-#   - title: Лабораторная работа №3
-#     details: Реализация продвинутых структур данных
-#     link: /labs/mathlogic/lab3
+features:
+  - title: Лабораторная работа №1
+    details: Графы и операции над ними. Алгоритм поиска в глубину, поиск компонент связности
+    link: /labs/discrete/lab1
+  - title: Лабораторная работа №2
+    link: /labs/discrete/lab2
+  - title: Лабораторная работа №3
+    link: /labs/discrete/lab3
+  - title: Лабораторная работа №4
+    link: /labs/discrete/lab3
+  - title: Лабораторная работа №5
+    link: /labs/discrete/lab3
+  - title: Лабораторная работа №6
+    link: /labs/discrete/lab3
 ---

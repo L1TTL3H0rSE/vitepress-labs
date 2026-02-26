@@ -32,13 +32,13 @@ head:
 <<< @/labs/mathlogic/lab1/lab1.ts
 :::
 
-![Успешно](/img/lab1/typescript.png)
+![Успешно](/img/mathlogic/lab1/typescript.png)
 
 ::: details Посмотреть исходный код на Python
 <<< @/labs/mathlogic/lab1/lab1.py
 :::
 
-![Успешно](/img/lab1/python.png)
+![Успешно](/img/mathlogic/lab1/python.png)
 
 ## 4. Трудности и их преодоление
 

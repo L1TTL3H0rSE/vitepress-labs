@@ -66,7 +66,14 @@ export default defineConfig({
       },
       {
         text: "Дискретная математика",
-        items: [],
+        items: [
+          { text: "Лабораторная работа №1", link: "/labs/discrete/lab1" },
+          { text: "Лабораторная работа №2", link: "/labs/discrete/lab2" },
+          { text: "Лабораторная работа №3", link: "/labs/discrete/lab3" },
+          { text: "Лабораторная работа №4", link: "/labs/discrete/lab4" },
+          { text: "Лабораторная работа №5", link: "/labs/discrete/lab5" },
+          { text: "Лабораторная работа №6", link: "/labs/discrete/lab6" },
+        ],
       },
     ],
 
