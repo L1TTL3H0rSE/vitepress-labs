@@ -15,20 +15,16 @@ import { BinarySearchTree } from './lab3/lab3_1'
 import { MinHeap } from './lab3/lab3_2'
 import { AVLTree } from './lab3/lab3_3'
 
-// Инстансы для демонстрации структуры
 const bst = new BinarySearchTree()
 const heap = new MinHeap()
 const avl = new AVLTree()
 
-// --- Логика для Heap Sort (Практическое задание №2) ---
 function heapSort(nums: number[]) {
   const _heap = new MinHeap<number>();
-  // Используем значение как приоритет для сортировки
   nums.forEach((n) => _heap.push(n, n));
   
   const sorted: number[] = [];
   while (!_heap.is_empty()) {
-    // pop возвращает элемент с наименьшим приоритетом
     const item = _heap.pop();
     if (item) sorted.push(item.data);
   }
@@ -59,6 +55,7 @@ const heapSortProps: InteractiveRunnerProps<number[]> = {
 Бинарное дерево поиска — это структура данных, где у каждого узла есть не более двух потомков. Для любого узла выполняется правило: значения в левом поддереве меньше значения узла, а значения в правом — больше.
 
 **Интерфейс:**
+
 * `insert(key)` — вставить элемент
 * `find(key)` — найти элемент
 * `delete(key)` — удалить элемент
@@ -73,11 +70,16 @@ const heapSortProps: InteractiveRunnerProps<number[]> = {
 <<< @/labs/mathlogic/lab3/lab3_1.ts
 :::
 
+::: details Посмотреть исходный код (Python)
+<<< @/labs/mathlogic/lab3/lab3_1.py
+:::
+
 ## 2. Куча (Min-Heap)
 
 Куча (пирамида) — это дерево, удовлетворяющее свойству кучи: для Min-Heap ключ каждого узла меньше или равен ключам его потомков. Обычно реализуется на базе массива.
 
 **Интерфейс:**
+
 * `push(item, priority)` — добавить элемент с приоритетом
 * `pop()` — удалить и вернуть элемент с наивысшим приоритетом (наименьшим числом)
 * `peek()` — вернуть верхушку
@@ -91,6 +93,10 @@ const heapSortProps: InteractiveRunnerProps<number[]> = {
 <<< @/labs/mathlogic/lab3/lab3_2.ts
 :::
 
+::: details Посмотреть исходный код (Python)
+<<< @/labs/mathlogic/lab3/lab3_2.py
+:::
+
 **Практическое задание:** Пирамидальная сортировка (Heap Sort)
 Алгоритм добавляет все элементы в кучу, а затем извлекает их по одному. Так как Min-Heap всегда отдает минимум, на выходе получаем отсортированную последовательность.
 
@@ -101,8 +107,14 @@ const heapSortProps: InteractiveRunnerProps<number[]> = {
 AVL-дерево — это сбалансированное двоичное дерево поиска. Разница высот левого и правого поддеревьев (фактор баланса) для любого узла не превышает 1. Это гарантирует логарифмическую сложность операций поиска и вставки `O(log n)`.
 
 **Интерфейс:**
-* Все методы BST
-* Автоматическая балансировка при `insert` и `delete` через повороты (`rotate_left`, `rotate_right`)
+
+* `insert(key)` — вставить элемент
+* `find(key)` — найти элемент
+* `delete(key)` — удалить элемент
+* `traverse_inorder()` — симметричный обход (возвращает отсортированный массив)
+* `height(node)` — высота поддерева
+* `balance_factor(node)` — вычисление фактора баланса
+* `rotate_left(node) / rotate_right(node)` — операции поворотов
 
 **Задание:** Реализовать AVL-дерево и сравнить его структуру с обычным BST на "плохих" данных.
 
@@ -110,6 +122,10 @@ AVL-дерево — это сбалансированное двоичное д
 
 ::: details Посмотреть исходный код (TypeScript)
 <<< @/labs/mathlogic/lab3/lab3_3.ts
+:::
+
+::: details Посмотреть исходный код (Python)
+<<< @/labs/mathlogic/lab3/lab3_3.py
 :::
 
 ### Сравнение балансировки (Практический эксперимент)
