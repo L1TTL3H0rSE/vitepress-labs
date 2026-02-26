@@ -7,18 +7,75 @@ head:
       content: typescript, python, vue, структуры
 ---
 
-<script setup>
+<script setup lang="ts">
 import ClassRunner from '../../components/ClassRunner.vue'
+import InteractiveRunner, { InteractiveRunnerProps } from '../../components/InteractiveRunner.vue'
 
-import { Stack } from './lab2/lab2_1.ts'
-import { Queue } from './lab2/lab2_2.ts'
-import { SinglyLinkedList } from './lab2/lab2_3.ts'
-import { DoublyLinkedList } from './lab2/lab2_4.ts'
+import { Stack } from './lab2/lab2_1'
+import { Queue } from './lab2/lab2_2'
+import { SinglyLinkedList } from './lab2/lab2_3'
+import { DoublyLinkedList } from './lab2/lab2_4'
 
 const stack = new Stack()
 const queue = new Queue()
 const sll = new SinglyLinkedList()
 const dll = new DoublyLinkedList()
+
+function reverseWords(words: string[]) {
+  const _stack = new Stack<string>();
+  words.forEach((e) => _stack.push(e));
+  const sentence: string[] = [];
+  while (!_stack.is_empty()) {
+    sentence.push(_stack.pop());
+  }
+  return sentence.join(" ");
+}
+
+function wordsMapper(input: string) {
+    if (!input.trim()) throw new Error("Введите предложение!");
+    return input.trim().split(" ");
+}
+
+const stackProps: InteractiveRunnerProps<String[]> = {
+  solution: reverseWords,
+  mapper: wordsMapper,
+  inputProps: {
+    label: "Введите предложение",
+    placeholder: "Например: 'Мама мыла раму'",
+  }
+};
+
+function simulateQueue(customers: string[]) {
+  const _queue = new Queue<String>();
+  if (!_queue.is_empty()) {
+    _queue.head = null;
+  }
+  const logs = [];
+  customers.forEach((e) => {
+    _queue.enqueue(e);
+    logs.push(`Клиент ${e} прибыл.`);
+  });
+  logs.push("Начинаем принимать клиентов.");
+  while (!_queue.is_empty()) {
+    const e = _queue.dequeue();
+    logs.push(`Клиент ${e} принят.`);
+  }
+  return logs.join("\n");
+}
+
+function peopleMapper(input: string) {
+    if (!input.trim()) throw new Error("Введите предложение!");
+    return input.trim().split(", ");
+}
+
+const queueProps: InteractiveRunnerProps<String[]> = {
+  solution: simulateQueue,
+  mapper: peopleMapper,
+  inputProps: {
+    label: "Введите людей через запятую",
+    placeholder: "Например: 'Николай, Василий, Петр'",
+  }
+};
 </script>
 
 # Лабораторная работа №2. Реализация базовых структур данных
@@ -49,6 +106,10 @@ const dll = new DoublyLinkedList()
 <<< @/labs/mathlogic/lab2/lab2_1.py
 :::
 
+**Практическое задание:** Разворот слов
+
+<InteractiveRunner v-bind="stackProps"/>
+
 ## 2. Очередь (Queue)
 
 Очередь — это структура данных, работающая по принципу FIFO (First In, First Out — «первым пришел, первым ушел»).
@@ -72,6 +133,10 @@ const dll = new DoublyLinkedList()
 ::: details Посмотреть исходный код (Python)
 <<< @/labs/mathlogic/lab2/lab2_2.py
 :::
+
+**Практическое задание:** Пример работы очереди
+
+<InteractiveRunner v-bind="queueProps"/>
 
 ## 3. Односвязный список (Singly Linked List)
 
@@ -125,4 +190,4 @@ const dll = new DoublyLinkedList()
 
 ## 5. Описание решения
 
-Поскольку в браузере достаточно сложно использовать код на питоне, мне пришлось перевести его на Typescript, чтобы иметь возможность наглядно демонстрировать работу каждой структуры данных. Также пришлось помучаться, чтобы правильно написать компонент ClassRunner, который может динамически принимать любой класс и при помощи рефлексии и прототипов сам отображать нужно количество инпутов, методов, данные и так далее. Но например display пришлось захардкодить, хотя это тоже можно сделать динамически через проп.
+Поскольку в браузере достаточно сложно использовать код на питоне, мне пришлось перевести его на Typescript, чтобы иметь возможность наглядно демонстрировать работу каждой структуры данных. Также пришлось помучаться, чтобы правильно написать компонент ClassRunner, который может динамически принимать любой класс и при помощи рефлексии и прототипов сам отображать нужно количество инпутов, методов, данные и так далее.

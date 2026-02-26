@@ -52,7 +52,7 @@ head:
 
 <script setup lang="ts">
 import InteractiveRunner from '../../components/InteractiveRunner.vue'
-import { sortByBits } from './lab1/lab1.ts'
+import { sortByBits } from './lab1/lab1'
 
 function mapper(input: string) {
     const arr = input

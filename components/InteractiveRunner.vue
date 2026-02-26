@@ -4,9 +4,21 @@ import { ref } from "vue";
 export type InteractiveRunnerProps<T> = {
   solution: (input: T) => any;
   mapper: (input: string) => T;
+  inputProps?: {
+    label?: string;
+    placeholder?: string;
+  };
 };
 
-const props = defineProps<InteractiveRunnerProps<T>>();
+// const props = defineProps<InteractiveRunnerProps<T>>();
+const {
+  solution,
+  mapper,
+  inputProps = {
+    label: "Введите массив (через запятую):",
+    placeholder: "Например: 0,1,2,3,4,5,6,7,8",
+  },
+} = defineProps<InteractiveRunnerProps<T>>();
 
 const inputStr = ref("");
 const outputStr = ref();
@@ -18,8 +30,8 @@ function run() {
 
   let arr: T;
   try {
-    arr = props.mapper(inputStr.value);
-    outputStr.value = String(props.solution(arr));
+    arr = mapper(inputStr.value);
+    outputStr.value = String(solution(arr));
   } catch (err: any) {
     console.error(err);
     errorStr.value = err.message || String(err);
@@ -30,11 +42,11 @@ function run() {
 <template>
   <div class="runner-container">
     <div class="input-group">
-      <label for="arrInput">Введите массив (через запятую):</label>
+      <label for="arrInput">{{ inputProps.label }}</label>
       <input
         id="arrInput"
         v-model="inputStr"
-        placeholder="Например: 0,1,2,3,4,5,6,7,8"
+        :placeholder="inputProps.placeholder"
       />
     </div>
     <button
@@ -107,6 +119,7 @@ function run() {
   border-left: 4px solid var(--vp-c-brand);
   border-radius: 4px;
   font-family: monospace;
+  white-space: pre-wrap;
 }
 .error-box {
   margin-top: 16px;
