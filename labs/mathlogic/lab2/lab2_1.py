@@ -39,3 +39,14 @@ class Stack(Generic[T]):
         if self.is_empty():
             raise Exception("Stack is empty!")
         return self.top.data
+    
+def reverse_words(sentence: str) -> str:
+    stack = Stack[str]()
+    for word in sentence.split():
+        stack.push(word)
+    
+    reversed_sentence =[]
+    while not stack.is_empty():
+        reversed_sentence.append(stack.pop())
+        
+    return " ".join(reversed_sentence)

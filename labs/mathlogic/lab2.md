@@ -163,6 +163,8 @@ const queueProps: InteractiveRunnerProps<String[]> = {
 <<< @/labs/mathlogic/lab2/lab2_3.py
 :::
 
+**Практическое задание:** Можно проверить в компоненте ClassRunner
+
 ## 4. Двусвязный список (Doubly Linked List)
 
 Структура данных, где каждый узел содержит ссылки как на следующий, так и на предыдущий элемент, что позволяет перемещаться в обоих направлениях.
@@ -187,6 +189,8 @@ const queueProps: InteractiveRunnerProps<String[]> = {
 ::: details Посмотреть исходный код (Python)
 <<< @/labs/mathlogic/lab2/lab2_4.py
 :::
+
+**Практическое задание:** Можно проверить в компоненте ClassRunner
 
 ## 5. Описание решения
 

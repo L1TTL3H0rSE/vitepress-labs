@@ -43,3 +43,13 @@ class Queue(Generic[T]):
         if self.is_empty():
             raise Exception("Queue is empty!")
         return self.head.data
+
+def simulate_customer_service(customers: list[str]):
+    queue = Queue[str]()
+    for c in customers:
+        queue.enqueue(c)
+        print(f"Клиент {c} встал в очередь.")
+        
+    while not queue.is_empty():
+        served = queue.dequeue()
+        print(f"Обслужен клиент: {served}")
