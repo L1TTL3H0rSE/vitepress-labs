@@ -43,10 +43,12 @@ function run() {
   <div class="runner-container">
     <div class="input-group">
       <label for="arrInput">{{ inputProps.label }}</label>
-      <input
+      <textarea
         id="arrInput"
         v-model="inputStr"
+        class="code-input"
         :placeholder="inputProps.placeholder"
+        rows="4"
       />
     </div>
     <button
@@ -89,12 +91,16 @@ function run() {
   font-weight: bold;
   margin-bottom: 8px;
 }
-.input-group input {
-  padding: 8px;
+.code-input {
+  padding: 12px;
   border: 1px solid var(--vp-c-border);
   border-radius: 4px;
   background-color: var(--vp-c-bg);
   color: var(--vp-c-text-1);
+  font-family: monospace;
+  min-height: 120px;
+  resize: vertical;
+  white-space: pre;
 }
 .run-btn {
   background-color: var(--vp-c-brand);
