@@ -23,5 +23,7 @@ features:
   - title: Дискретная математика
     details: Лабораторные работы №1-6
     link: /discrete
+  - title: Шпаргалка
+    link: /shpora
 ---
 
