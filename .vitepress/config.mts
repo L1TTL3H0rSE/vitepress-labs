@@ -58,6 +58,7 @@ export default defineConfig({
     sidebar: [
       {
         text: "Математическая логика и теория алгоритмов",
+        link: "/mathlogic",
         items: [
           { text: "Лабораторная работа №1", link: "/labs/mathlogic/lab1" },
           { text: "Лабораторная работа №2", link: "/labs/mathlogic/lab2" },
@@ -66,6 +67,7 @@ export default defineConfig({
       },
       {
         text: "Дискретная математика",
+        link: "/discrete",
         items: [
           { text: "Лабораторная работа №1", link: "/labs/discrete/lab1" },
           { text: "Лабораторная работа №2", link: "/labs/discrete/lab2" },
@@ -74,6 +76,10 @@ export default defineConfig({
           { text: "Лабораторная работа №5", link: "/labs/discrete/lab5" },
           { text: "Лабораторная работа №6", link: "/labs/discrete/lab6" },
         ],
+      },
+      {
+        text: "Информационная безопасность и защита информации",
+        link: "/infosec",
       },
     ],
 

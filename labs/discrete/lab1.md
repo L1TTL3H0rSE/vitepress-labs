@@ -28,7 +28,7 @@ import { task1Props, task2Props } from './lab1/solutions'
 
 ::: details Код решения
 
-```mathematica
+```txt
 g1 = CycleGraph[5];
 g2 = TuranGraph[5, 3];
 {g1, g2}
@@ -48,7 +48,7 @@ g2 = TuranGraph[5, 3];
 
 ::: details Код решения
 
-```mathematica
+```txt
 g3 = GraphComplement[g1];
 g = EdgeAdd[g3, 1 <-> 3];
 g4 = StarGraph[5];
@@ -65,7 +65,7 @@ g4 = StarGraph[5];
 
 ::: details Общий код для всех операций
 
-```mathematica
+```txt
 GraphJoin[g1, g4]
 GraphComplement[g4]
 GraphDifference[g1, GraphComplement[g4]]
@@ -83,7 +83,7 @@ GraphUnion[g4, g1]
 
 1. **Матрица смежности:**
 
-```mathematica
+```txt
 1 1 1 0
 1 1 0 1
 1 0 1 1
@@ -97,7 +97,7 @@ GraphUnion[g4, g1]
 
 ::: details Код решения
 
-```mathematica
+```txt
 adj = {{1, 1, 1, 0}, {1, 1, 0, 1}, {1, 0, 1, 1}, {0, 1, 1, 1}};
 g5 = AdjacencyGraph[adj];
 
