@@ -23,7 +23,8 @@ features:
   - title: Дискретная математика
     details: Лабораторные работы №1-6
     link: /discrete
-  - title: Шпаргалка
-    link: /shpora
+  - title: Информационная безопасность и защита информации
+    details: Лабораторные работы №1-7
+    link: /infosec
 ---
 
