@@ -11,3 +11,11 @@
     --disabled-color: #4a5568;
     --primary-main-color: #42b883;
 }
+
+.heading>.text {
+    font-size: 48px;
+
+    @media (max-width: 639px) {
+        font-size: 32px;
+    }
+}

@@ -1,5 +1,17 @@
 {
+    "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "target": "ESNext",
+        "allowJs": true,
+        "checkJs": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "strict": true
+    },
     "include": [
+        ".vitepress/**/*.mts",
+        ".vitepress/**/*.ts",
         "**/*.ts",
         "**/*.vue",
         "**/*.md",

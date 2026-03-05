@@ -100,6 +100,15 @@ export default defineConfig({
         text: "Информационная безопасность и защита информации",
         link: "/infosec",
       },
+      {
+        text: "Лингвистическое обеспечение систем автоматизированного проектирования",
+        link: "/lingo",
+        items: [
+          { text: "Лабораторная работа №1", link: "/labs/lingo/lab1" },
+          { text: "Лабораторная работа №2", link: "/labs/lingo/lab2" },
+          { text: "Лабораторная работа №3", link: "/labs/lingo/lab3" },
+        ],
+      },
     ],
 
     socialLinks: [
