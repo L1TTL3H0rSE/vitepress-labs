@@ -85,7 +85,8 @@ const renderGraph = async () => {
         primaryBorderColor: colors.value.nodeBorder,
         lineColor: colors.value.line,
         secondaryColor: colors.value.bg,
-        tertiaryColor: colors.value.bg,
+        edgeLabelBackground: "transparent",
+        tertiaryColor: "transparent",
         fontSize: "16px",
       },
     });
@@ -134,5 +135,9 @@ watch([mermaidCode, isDark], () => {
 :deep(.nodeLabel) {
   font-family: var(--vp-font-family-mono) !important;
   font-weight: bold;
+}
+
+:deep(.labelBkg) {
+  background-color: transparent !important;
 }
 </style>
