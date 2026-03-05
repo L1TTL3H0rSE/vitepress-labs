@@ -29,8 +29,7 @@ const gitVersion = getGitInfo();
 export default defineConfig({
   base: "/vitepress-labs/",
   title: "Лабораторные работы",
-  description:
-    "Лабораторные работы по предмету Математическая логика и теория алгоритмов",
+  description: "Лабораторные работы по разным предметам",
   cleanUrls: true,
   head: [
     ["link", { rel: "icon", href: "/vitepress-labs/favicon.ico" }],

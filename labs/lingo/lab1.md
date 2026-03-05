@@ -4,8 +4,8 @@ description: Автомат проверки правильности скобо
 ---
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import InteractiveRunner from '../../components/InteractiveRunner.vue'
+import AutomataGraph from '../../components/AutomataGraph.vue';
 import { ConverterAutomata } from './lab1/lab1_2';
 import { PushdownAutomata, BRACKET_PAIRS } from './lab1/lab1_1'
 
@@ -94,6 +94,18 @@ function stringMapper(input: string) {
     <pre><code>{{ dfaString }}</code></pre>
   </div>
 </div>
+
+## Визуализация недетерминированного автомата (НКА)
+
+Этот автомат может по символу `a` остаться в `q0` или пойти в `q1`.
+
+<AutomataGraph :config="nfaConfig" :isNfa="true" />
+
+## Результат детерминизации (ДКА)
+
+Автомат был программно преобразован с помощью метода подмножеств. Теперь из каждого состояния выходит только один уникальный путь для каждого символа.
+
+<AutomataGraph :config="dfaResult" :isNfa="false" />
 
 ::: details Исходный код конвертера (TypeScript)
 <<< @/labs/lingo/lab1/lab1_2.ts
