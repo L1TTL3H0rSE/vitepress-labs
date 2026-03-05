@@ -19,6 +19,7 @@ logs
 .idea
 .vitepress/cache
 .vitepress/dist
+.dart_tool/
 
 # Local env files
 .env
