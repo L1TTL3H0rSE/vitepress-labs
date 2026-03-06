@@ -8,9 +8,9 @@ import {
 } from "../labs/lingo/lab3/presets";
 
 const selectedProgram = ref("add");
-const inputTape = ref("XX_XXX"); // Пример 2 + 3
+const inputTape = ref("XX_XXX");
 const isRunning = ref(false);
-const speed = ref(300); // мс
+const speed = ref(300);
 const machine = ref<TuringMachine | null>(null);
 const stepsCount = ref(0);
 
