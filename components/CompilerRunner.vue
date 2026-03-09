@@ -150,8 +150,8 @@ function compileAndRun() {
   border-radius: 6px;
 }
 .results-section {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 }
 @media (min-width: 768px) {

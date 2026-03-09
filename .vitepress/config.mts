@@ -104,6 +104,10 @@ export default defineConfig({
         link: "/lingo",
         items: [
           {
+            text: "Курсовая работа",
+            link: "/labs/lingo/coursework",
+          },
+          {
             text: "Отчет по практическим задачам №1",
             link: "/labs/lingo/task1",
           },
