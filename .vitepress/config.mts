@@ -103,9 +103,18 @@ export default defineConfig({
         text: "Лингвистическое обеспечение систем автоматизированного проектирования",
         link: "/lingo",
         items: [
-          { text: "Лабораторная работа №1", link: "/labs/lingo/lab1" },
-          { text: "Лабораторная работа №2", link: "/labs/lingo/lab2" },
-          { text: "Лабораторная работа №3", link: "/labs/lingo/lab3" },
+          {
+            text: "Отчет по практическим задачам №1",
+            link: "/labs/lingo/lab1",
+          },
+          {
+            text: "Отчет по практическим задачам №2",
+            link: "/labs/lingo/lab2",
+          },
+          {
+            text: "Отчет по практическим задачам №3",
+            link: "/labs/lingo/lab3",
+          },
         ],
       },
     ],
