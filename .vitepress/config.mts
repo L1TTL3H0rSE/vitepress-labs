@@ -105,15 +105,15 @@ export default defineConfig({
         items: [
           {
             text: "Отчет по практическим задачам №1",
-            link: "/labs/lingo/lab1",
+            link: "/labs/lingo/task1",
           },
           {
             text: "Отчет по практическим задачам №2",
-            link: "/labs/lingo/lab2",
+            link: "/labs/lingo/task2",
           },
           {
             text: "Отчет по практическим задачам №3",
-            link: "/labs/lingo/lab3",
+            link: "/labs/lingo/task3",
           },
         ],
       },

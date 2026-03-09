@@ -12,11 +12,11 @@ features:
     link: /labs/lingo/coursework
   - title: Отчет по практическим задачам №1
     details: "Задачи 1-2: Формальные грамматики и автоматы"
-    link: /labs/lingo/lab1
+    link: /labs/lingo/task1
   - title: Отчет по практическим задачам №2
     details: "Задачи 3-5: Трансляция и вычисление выражений"
-    link: /labs/lingo/lab2
+    link: /labs/lingo/task2
   - title: Отчет по практическим задачам №3
     details: "Задачи 6-8: Машины Тьюринга и Поста"
-    link: /labs/lingo/lab3
+    link: /labs/lingo/task3
 ---

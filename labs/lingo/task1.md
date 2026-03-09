@@ -6,8 +6,8 @@ description: Автомат проверки правильности скобо
 <script setup lang="ts">
 import InteractiveRunner from '../../components/InteractiveRunner.vue'
 import AutomataGraph from '../../components/AutomataGraph.vue';
-import { ConverterAutomata } from './lab1/lab1_2';
-import { PushdownAutomata, BRACKET_PAIRS } from './lab1/lab1_1'
+import { ConverterAutomata } from './task1/task1_2';
+import { PushdownAutomata, BRACKET_PAIRS } from './task1/task1_1'
 
 const automata = new PushdownAutomata(BRACKET_PAIRS);
 
@@ -71,11 +71,11 @@ function stringMapper(input: string) {
 />
 
 ::: details Исходный код автомата (TypeScript)
-<<< @/labs/lingo/lab1/lab1_1.ts
+<<< @/labs/lingo/task1/task1_1.ts
 :::
 
 ::: details Исходный код автомата (Python)
-<<< @/labs/lingo/lab1/lab1_1.py
+<<< @/labs/lingo/task1/task1_1.py
 :::
 
 ## Задание 2: Детерминизация автомата
@@ -108,9 +108,9 @@ function stringMapper(input: string) {
 <AutomataGraph :config="dfaResult" :isNfa="false" />
 
 ::: details Исходный код конвертера (TypeScript)
-<<< @/labs/lingo/lab1/lab1_2.ts
+<<< @/labs/lingo/task1/task1_2.ts
 :::
 
 ::: details Исходный код конвертера (Python)
-<<< @/labs/lingo/lab1/lab1_2.py
+<<< @/labs/lingo/task1/task1_2.py
 :::

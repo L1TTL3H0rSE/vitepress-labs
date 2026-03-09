@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
-import { TuringMachine, type TuringProgram } from "../labs/lingo/lab3/turing";
+import { TuringMachine, type TuringProgram } from "../labs/lingo/task3/turing";
 import {
   PROGRAM_ADDITION,
   PROGRAM_SUBTRACTION,
   PROGRAM_COPY,
-} from "../labs/lingo/lab3/presets";
+} from "../labs/lingo/task3/presets";
 
 const selectedProgram = ref("add");
 const inputTape = ref("XX_XXX");

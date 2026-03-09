@@ -1,7 +1,7 @@
 import re
 import math
 from typing import List, Dict
-from lab2_1 import Stack
+from labs.lingo.task2.task2_1 import Stack
 
 OPERATORS: Dict[str, int] = {
     "+": 1,

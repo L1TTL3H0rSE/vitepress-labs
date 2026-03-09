@@ -34,11 +34,11 @@ import TuringEmulator from '../../components/TuringEmulator.vue'
 Машина реализована на TypeScript. Каждая программа представляет собой таблицу переходов (State Map), где ключом является пара `(ТекущееСостояние : СимволНаЛенте)`, а значением — инструкция `(Записать, Сдвинуть, НовоеСостояние)`.
 
 ::: details Исходный код движка (TypeScript)
-<<< @/labs/lingo/lab3/turing.ts
+<<< @/labs/lingo/task3/turing.ts
 :::
 
 ::: details Алгоритмы (Таблицы переходов)
-<<< @/labs/lingo/lab3/presets.ts
+<<< @/labs/lingo/task3/presets.ts
 :::
 
 ## 2. Машина Поста
