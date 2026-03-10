@@ -23,15 +23,57 @@ export class Translator {
 
   private generateRuntime(): void {
     this.output.push(`// --- RUNTIME ENVIRONMENT ---`);
+
     this.output.push(`function __input(name) {`);
     this.output.push(`  let val = prompt("Введите значение для: " + name);`);
     this.output.push(`  return Number(val);`);
     this.output.push(`}`);
+
     this.output.push(`function __sortMatrix(matrix) {`);
     this.output.push(`  for (let i = 0; i < matrix.length; i++) {`);
     this.output.push(`    matrix[i].sort((a, b) => a - b);`);
     this.output.push(`  }`);
     this.output.push(`}`);
+
+    this.output.push(`function __add(a, b) {`);
+    this.output.push(`  if (Array.isArray(a) && Array.isArray(b)) {`);
+    this.output.push(
+      `    return a.map((row, i) => row.map((val, j) => val + b[i][j]));`,
+    );
+    this.output.push(`  }`);
+    this.output.push(`  return a + b;`);
+    this.output.push(`}`);
+
+    this.output.push(`function __sub(a, b) {`);
+    this.output.push(`  if (Array.isArray(a) && Array.isArray(b)) {`);
+    this.output.push(
+      `    return a.map((row, i) => row.map((val, j) => val - b[i][j]));`,
+    );
+    this.output.push(`  }`);
+    this.output.push(`  return a - b;`);
+    this.output.push(`}`);
+
+    this.output.push(`function __compare(a, b, op) {`);
+    this.output.push(`  let valA = a, valB = b;`);
+    this.output.push(
+      `  // Если это матрица, считаем сумму ее элементов для сравнения`,
+    );
+    this.output.push(
+      `  if (Array.isArray(a)) valA = a.flat().reduce((acc, x) => acc + x, 0);`,
+    );
+    this.output.push(
+      `  if (Array.isArray(b)) valB = b.flat().reduce((acc, x) => acc + x, 0);`,
+    );
+    this.output.push(`  switch(op) {`);
+    this.output.push(`    case '>': return valA > valB;`);
+    this.output.push(`    case '<': return valA < valB;`);
+    this.output.push(`    case '>=': return valA >= valB;`);
+    this.output.push(`    case '<=': return valA <= valB;`);
+    this.output.push(`    case '==': return valA == valB;`);
+    this.output.push(`    case '!=': return valA != valB;`);
+    this.output.push(`  }`);
+    this.output.push(`}`);
+
     this.output.push(`// --- COMPILED CODE ---`);
   }
 
@@ -71,6 +113,14 @@ export class Translator {
   private visitBinaryExpr(node: AST.BinaryExpr): string {
     const left = this.visitNode(node.left);
     const right = this.visitNode(node.right);
+
+    if (node.operator == "+") return `__add(${left}, ${right})`;
+    if (node.operator == "-") return `__sub(${left}, ${right})`;
+
+    if (["==", "!=", ">", "<", ">=", "<="].includes(node.operator)) {
+      return `__compare(${left}, ${right}, "${node.operator}")`;
+    }
+
     return `(${left} ${node.operator} ${right})`;
   }
 
