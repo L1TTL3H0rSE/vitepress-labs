@@ -107,10 +107,6 @@ export class Lexer {
         });
         continue;
       }
-      // if (char == " " || char == "\n" || char == "\t" || char == "\r") {
-      //   this.advance();
-      //   continue;
-      // }
       if (PUNCTUATION.has(char)) {
         tokens.push({
           type: TokenType.Punctuation,
