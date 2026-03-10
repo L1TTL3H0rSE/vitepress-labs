@@ -28,7 +28,7 @@ const mermaidCode = computed(() => {
   const { initialState, transitions, finalStates } = props.config;
   const safeId = (id: string) => "S_" + id.replace(/[^a-zA-Z0-9]/g, "_");
   const getLabel = (id: string) => {
-    const text = id === "" ? "∅" : id;
+    const text = id == "" ? "∅" : id;
     return ` ${text} `;
   };
 
@@ -49,7 +49,7 @@ const mermaidCode = computed(() => {
           const labelTo = getLabel(t);
           code += `  ${safeId(fromState)}(("${labelFrom}")) -->|"${char}"| ${safeId(t)}(("${labelTo}"))\n`;
         });
-      } else if (typeof target === "string") {
+      } else if (typeof target == "string") {
         const labelTo = getLabel(target);
         code += `  ${safeId(fromState)}(("${labelFrom}")) -->|"${char}"| ${safeId(target)}(("${labelTo}"))\n`;
       }

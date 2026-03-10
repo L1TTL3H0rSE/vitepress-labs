@@ -126,11 +126,11 @@ if (!machine.value) initMachine();
           v-for="(cell, index) in machine.tape"
           :key="index"
           class="tape-cell"
-          :class="{ active: index === machine.head }"
+          :class="{ active: index == machine.head }"
         >
-          {{ cell === "_" ? "" : cell }}
+          {{ cell == "_" ? "" : cell }}
           <div
-            v-if="index === machine.head"
+            v-if="index == machine.head"
             class="head-marker"
           >
             ▲

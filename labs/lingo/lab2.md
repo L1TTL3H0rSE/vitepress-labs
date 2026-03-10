@@ -52,6 +52,6 @@ import { task3Props, task4Props, task5Props } from './lab2/lab2'
 
 Вся логика текстовых трансформаций вынесена в чистые функции TypeScript.
 
-::: details Посмотреть исходный код алгоритмов (solutions.ts)
-<<< @/labs/lingo/lab2/solutions.ts
+::: details Посмотреть исходный код алгоритмов (lab2.ts)
+<<< @/labs/lingo/lab2/lab2.ts
 :::

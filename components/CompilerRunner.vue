@@ -40,7 +40,7 @@ function compileAndRun() {
     const fakeConsole = {
       log: (...args: any[]) => {
         const msg = args
-          .map((a) => (typeof a === "object" ? JSON.stringify(a) : String(a)))
+          .map((a) => (typeof a == "object" ? JSON.stringify(a) : String(a)))
           .join(" ");
         logs.value.push(msg);
       },
@@ -99,7 +99,7 @@ function compileAndRun() {
           <div
             v-for="(log, i) in logs"
             :key="i"
-            >> {{ log }}</div><div v-if="logs.length === 0"
+            >> {{ log }}</div><div v-if="logs.length == 0"
             style="color: #666;"
           >
             [Вывод пуст]

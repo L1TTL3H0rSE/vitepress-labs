@@ -28,7 +28,7 @@ export const task1Props: InteractiveRunnerProps<string> = {
       if (/\//.test(line)) results["/"].push(lineNum);
     });
 
-    let output = "=== РЕЗУЛЬТАТЫ ПОИСКА ===\n\n";
+    let output = "== РЕЗУЛЬТАТЫ ПОИСКА ==\n\n";
     for (const [token, linesArr] of Object.entries(results)) {
       output += `Токен "${token}": найдено ${linesArr.length} шт.\n`;
       if (linesArr.length > 0) {
@@ -84,10 +84,10 @@ export const task6Props: InteractiveRunnerProps<string> = {
 
     const matches = text.match(numberRegex);
 
-    if (!matches || matches.length === 0) {
+    if (!matches || matches.length == 0) {
       return "В тексте числа не обнаружены.";
     }
 
-    return `=== НАЙДЕННЫЕ ЧИСЛА ===\n\nКоличество: ${matches.length}\nЧисла: ${matches.join(", ")}`;
+    return `== НАЙДЕННЫЕ ЧИСЛА ==\n\nКоличество: ${matches.length}\nЧисла: ${matches.join(", ")}`;
   },
 };

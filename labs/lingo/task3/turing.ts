@@ -29,7 +29,7 @@ export class TuringMachine {
   }
 
   step(): boolean {
-    if (this.state === this.FINAL_STATE) return false;
+    if (this.state == this.FINAL_STATE) return false;
     const key = `${this.state}:${this.currentSymbol}`;
     const rule = this.program[key];
 
@@ -39,13 +39,13 @@ export class TuringMachine {
     }
 
     this.tape[this.head] = rule.write;
-    if (rule.move === "L") {
+    if (rule.move == "L") {
       this.head--;
       if (this.head < 0) {
         this.tape.unshift("_");
         this.head = 0;
       }
-    } else if (rule.move === "R") {
+    } else if (rule.move == "R") {
       this.head++;
       if (this.head >= this.tape.length) {
         this.tape.push("_");
@@ -53,7 +53,7 @@ export class TuringMachine {
     }
     this.state = rule.next;
 
-    return this.state !== this.FINAL_STATE;
+    return this.state != this.FINAL_STATE;
   }
 
   getTapeString() {

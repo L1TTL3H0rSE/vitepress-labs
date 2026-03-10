@@ -21,7 +21,7 @@ function solveExpression(input: string) {
         const result = processor.evaluatePostfix(postfix);
 
         return `
-=== РЕЗУЛЬТАТЫ АНАЛИЗА ===
+== РЕЗУЛЬТАТЫ АНАЛИЗА ==
 
 1. Постфиксная форма (Обратная польская запись):
    [ ${postfix.join(' ')} ]

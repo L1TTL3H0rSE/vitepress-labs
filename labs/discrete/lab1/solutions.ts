@@ -30,7 +30,7 @@ export const task1Props: InteractiveRunnerProps<GraphData> = {
 
   solution: ({ n, adj }: GraphData): string => {
     const startNode = 1;
-    if (n === 0) return "0";
+    if (n == 0) return "0";
     const visited = new Set<number>();
     const queue: number[] = [startNode];
     visited.add(startNode);

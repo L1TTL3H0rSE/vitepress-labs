@@ -28,8 +28,8 @@ const methodsList = computed<MethodInfo[]>(() => {
   return propsNames
     .filter((name) => {
       return (
-        typeof instance[name] === "function" &&
-        name !== "constructor" &&
+        typeof instance[name] == "function" &&
+        name != "constructor" &&
         !name.startsWith("_")
       );
     })
@@ -46,7 +46,7 @@ const serializedState = computed(() => {
     instance,
     (key, value) => {
       if (key.startsWith("_")) return undefined;
-      if (typeof value === "object" && value !== null) {
+      if (typeof value == "object" && value != null) {
         if (seen.has(value)) return "[Циклическая ссылка]";
         seen.add(value);
       }
@@ -65,7 +65,7 @@ const invokeMethod = (methodName: string, argsNames: string[]) => {
       return parseArgument(rawValue);
     });
     const result = instance[methodName](...argsToPass);
-    lastResult.value = result !== undefined ? result : "Успешно (void)";
+    lastResult.value = result != undefined ? result : "Успешно (void)";
   } catch (err: any) {
     lastError.value = err.message ?? String(err);
   } finally {
@@ -89,10 +89,10 @@ function getFunctionArgs(func: Function): string[] {
 
 function parseArgument(val: string) {
   const trimmed = val.trim();
-  if (trimmed === "") return undefined;
-  if (trimmed === "null") return null;
-  if (trimmed === "true") return true;
-  if (trimmed === "false") return false;
+  if (trimmed == "") return undefined;
+  if (trimmed == "null") return null;
+  if (trimmed == "true") return true;
+  if (trimmed == "false") return false;
   const num = Number(trimmed);
   if (!Number.isNaN(num)) return num;
   try {
@@ -126,14 +126,14 @@ watchEffect(() => {
       <pre class="state-code"><code>{{ serializedState }}</code></pre>
     </div>
     <div
-      v-if="lastResult !== null"
+      v-if="lastResult != null"
       class="alert success"
     >
       <strong>Результат:</strong>
       {{ lastResult }}
     </div>
     <div
-      v-if="lastError !== null"
+      v-if="lastError != null"
       class="alert error"
     >
       <strong>Ошибка:</strong>

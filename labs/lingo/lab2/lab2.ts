@@ -56,7 +56,7 @@ export const task3Props: InteractiveRunnerProps<string> = {
       outputLines.push(processedLine);
     }
 
-    return "=== ПОСЛЕ РАБОТЫ ПРЕПРОЦЕССОРА ===\n\n" + outputLines.join("\n");
+    return "== ПОСЛЕ РАБОТЫ ПРЕПРОЦЕССОРА ==\n\n" + outputLines.join("\n");
   },
 };
 
@@ -101,9 +101,9 @@ export const task5Props: InteractiveRunnerProps<string> = {
     const declRegex = /\b(int|double)\s+([^;]+);/g;
     let match;
 
-    while ((match = declRegex.exec(code)) !== null) {
+    while ((match = declRegex.exec(code)) != null) {
       const type = match[1];
-      const prefix = type === "int" ? "i" : "d";
+      const prefix = type == "int" ? "i" : "d";
       const varsStr = match[2];
 
       const vars = varsStr.split(",");
@@ -125,12 +125,12 @@ export const task5Props: InteractiveRunnerProps<string> = {
 
     for (const oldName of sortedKeys) {
       const newName = varMap[oldName];
-      if (oldName !== newName) {
+      if (oldName != newName) {
         const replaceRegex = new RegExp(`\\b${oldName}\\b`, "g");
         processedCode = processedCode.replace(replaceRegex, newName);
       }
     }
 
-    return "=== КОД ПОСЛЕ РЕФАКТОРИНГА ===\n\n" + processedCode;
+    return "== КОД ПОСЛЕ РЕФАКТОРИНГА ==\n\n" + processedCode;
   },
 };
