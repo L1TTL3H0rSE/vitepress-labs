@@ -25,13 +25,20 @@ export class Translator {
     this.output.push(`// --- RUNTIME ENVIRONMENT ---`);
 
     this.output.push(`function __input(name) {`);
-    this.output.push(`  let val = prompt("Введите значение для: " + name);`);
+    this.output.push(
+      `  let val = prompt("Введите значение для: " + name + " (для матрицы используйте формат [[1,2],[3,4]])");`,
+    );
+    this.output.push(`  try {`);
+    this.output.push(`    // Пытаемся распарсить как массив (JSON)`);
+    this.output.push(`    let parsed = JSON.parse(val);`);
+    this.output.push(`    if (Array.isArray(parsed)) return parsed;`);
+    this.output.push(`  } catch(e) {}`);
     this.output.push(`  return Number(val);`);
     this.output.push(`}`);
 
     this.output.push(`function __sortMatrix(matrix) {`);
     this.output.push(`  for (let i = 0; i < matrix.length; i++) {`);
-    this.output.push(`    matrix[i].sort((a, b) => a - b);`);
+    this.output.push(`    matrix[i].sort((a, b) => b - a);`);
     this.output.push(`  }`);
     this.output.push(`}`);
 
@@ -55,9 +62,6 @@ export class Translator {
 
     this.output.push(`function __compare(a, b, op) {`);
     this.output.push(`  let valA = a, valB = b;`);
-    this.output.push(
-      `  // Если это матрица, считаем сумму ее элементов для сравнения`,
-    );
     this.output.push(
       `  if (Array.isArray(a)) valA = a.flat().reduce((acc, x) => acc + x, 0);`,
     );
@@ -149,7 +153,7 @@ export class Translator {
 
   private visitWhileStatement(node: AST.WhileStatement): string {
     const conditionStr = this.visitNode(node.condition);
-    let result = `while ${conditionStr} {\n`;
+    let result = `while (${conditionStr}) {\n`;
     this.indentLevel++;
     for (const statement of node.body) {
       const stmtStr = this.visitNode(statement);
@@ -162,7 +166,7 @@ export class Translator {
 
   private visitIfStatement(node: AST.IfStatement): string {
     const conditionStr = this.visitNode(node.condition);
-    let result = `if ${conditionStr} {\n`;
+    let result = `if (${conditionStr}) {\n`;
     this.indentLevel++;
     for (const statement of node.consequent) {
       result += this.indent() + this.visitNode(statement) + "\n";
