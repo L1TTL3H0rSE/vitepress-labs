@@ -137,6 +137,10 @@ export default defineConfig({
         text: "Программные средства обработки компьютерной графики",
         link: "/prograph",
       },
+      {
+        text: "Электроника и микропроцессорная техника",
+        link: "/electronics",
+      },
     ],
 
     socialLinks: [

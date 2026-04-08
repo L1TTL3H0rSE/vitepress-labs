@@ -31,5 +31,8 @@ features:
   - title: Программные средства обработки компьютерной графики
     details: Задания №1-8
     link: /prograph
+  - title: Электроника и микропроцессорная техника
+    details: Задания №1-2
+    link: /electronics
 ---
 
